@@ -1,0 +1,33 @@
+{{set . "title" "Home"}}
+{{/*append . "moreStyles" "mystyle.css"*/}}
+{{append . "moreScripts" "lodash.min.js"}}
+{{append . "moreScripts" "Chart.min.js"}}
+{{append . "moreScripts" "myscript.js"}}
+{{template "header.html" .}}
+
+<header class="jumbotron" style="background-color:#A9F16C">
+  <div class="container">
+    <div class="row">
+      <h1>WebSocket & Chart.js TEST!</h1>
+      <p></p>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <form action="#" id="timeform">
+    <input type="text" id="msec" value="{{.deftime}}"> [ms]
+    <input type="submit" value="Submit">
+  </form>
+  <canvas id="mycanvas" height="500" width="1200"></canvas>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      {{template "flash.html" .}}
+    </div>
+  </div>
+</div>
+
+{{template "footer.html" .}}
