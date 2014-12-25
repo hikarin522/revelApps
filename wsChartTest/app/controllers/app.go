@@ -50,11 +50,16 @@ func (c App) WsCon(ws *websocket.Conn) revel.Result {
 				return nil
 			}
 
-			sin := math.Sin(2 * math.Pi * count * 11)
-			cos := math.Cos(2 * math.Pi * count * 13)
-			points[0] = int((sin + 1) * 50)
-			points[1] = int((cos + 1) * 50)
-			points[2] = int((sin + cos + 2) * 25)
+			sin := math.Sin(2 * math.Pi * count * 13)
+			cos := math.Cos(2 * math.Pi * count * 17)
+
+			//points[0] = int((sin + 1) * 50)
+			//points[1] = int((cos + 1) * 50)
+			//points[2] = int((sin + cos + 2) * 25)
+
+			points[0] = int((sin + cos + 2) * 25)
+			points[1] = int((sin - cos + 2) * 25)
+			points[2] = int(((sin * cos) + 1) * 50)
 
 			count += 1e-3
 			if count >= 1 {
